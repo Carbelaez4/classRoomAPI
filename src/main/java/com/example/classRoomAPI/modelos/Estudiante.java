@@ -1,32 +1,45 @@
 package com.example.classRoomAPI.modelos;
 
 import com.example.classRoomAPI.ayudas.TipoUsuario;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
 import java.time.LocalDate;
-
+import java.util.List;
+@Entity
 public class Estudiante {
-    private Integer idEstudiante;
+    private Integer id;
     private Integer  grado;
     private LocalDate fechaNacimiento;
     private String direccion;
 
+    //Creando relacion Calificacion(1 a *)
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference
+    private List<Calificacion> calificaciones;
+
+    //Creando relacion Asistencia (1 a *)
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference
+    private List<Asistencia> asistencias;
 
     public Estudiante() {
     }
 
-    public Estudiante(Integer idEstudiante, Integer grado, LocalDate fechaNacimiento, String direccion) {
-        this.idEstudiante = idEstudiante;
+    public Estudiante(Integer id, Integer grado, LocalDate fechaNacimiento, String direccion) {
+        this.id = id;
         this.grado = grado;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
     }
 
-    public Integer getIdEstudiante() {
-        return idEstudiante;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdEstudiante(Integer idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getGrado() {

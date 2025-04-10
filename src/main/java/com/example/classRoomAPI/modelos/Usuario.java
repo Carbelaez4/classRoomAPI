@@ -1,9 +1,11 @@
 package com.example.classRoomAPI.modelos;
 
 import com.example.classRoomAPI.ayudas.TipoUsuario;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Usuario {
-    private Integer idUsuario;
+    private Integer id;
     private String nombre;
     private String contrasena;
     private String correoElectronico;
@@ -14,8 +16,8 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer idUsuario, String nombre, String contrasena, String correoElectronico, String telefono, TipoUsuario tipoUsuario) {
-        this.idUsuario = idUsuario;
+    public Usuario(Integer id, String nombre, String contrasena, String correoElectronico, String telefono, TipoUsuario tipoUsuario) {
+        this.id = id;
         this.nombre = nombre;
         this.contrasena = contrasena;
         this.correoElectronico = correoElectronico;
@@ -23,12 +25,12 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {

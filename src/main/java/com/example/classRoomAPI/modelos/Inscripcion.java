@@ -1,25 +1,27 @@
 package com.example.classRoomAPI.modelos;
 
-import java.time.LocalDate;
+import jakarta.persistence.Entity;
 
+import java.time.LocalDate;
+@Entity
 public class Inscripcion {
-    private Integer idInscripcion;
+    private Integer id;
     private LocalDate fechaInscripcion;
 
     public Inscripcion() {
     }
 
-    public Inscripcion(Integer idInscripcion, LocalDate fechaInscripcion) {
-        this.idInscripcion = idInscripcion;
+    public Inscripcion(Integer id, LocalDate fechaInscripcion) {
+        this.id = id;
         this.fechaInscripcion = fechaInscripcion;
     }
 
-    public Integer getIdInscripcion() {
-        return idInscripcion;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdInscripcion(Integer idInscripcion) {
-        this.idInscripcion = idInscripcion;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public LocalDate getFechaInscripcion() {
