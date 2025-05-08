@@ -33,10 +33,10 @@ public class Calificacion {
     public Calificacion() {
     }
 
-    public Calificacion(Integer id, Double nota, LocalDate fechaEvalucion) {
+    public Calificacion(Integer id, Double nota, LocalDate fechaEvalaucion) {
         this.id = id;
         this.nota = nota;
-        this.fechaEvalucion = fechaEvalucion;
+        this.fechaEvaluacion = fechaEvaluacion;
     }
 
     public Integer getId() {
@@ -55,11 +55,11 @@ public class Calificacion {
         this.nota = nota;
     }
 
-    public LocalDate getFechaEvalucion() {
-        return fechaEvalucion;
+    public LocalDate getFechaEvaluacion() {
+        return fechaEvaluacion;
     }
 
     public void setFechaEvalucion(LocalDate fechaEvalucion) {
-        this.fechaEvalucion = fechaEvalucion;
+        this.fechaEvaluacion = fechaEvalucion;
     }
 }

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 @Entity
 public class Materia {
-    private Integer idMateria;
+    private Integer id;
     private String nombre;
 
     //Creando relacion 1 a *
