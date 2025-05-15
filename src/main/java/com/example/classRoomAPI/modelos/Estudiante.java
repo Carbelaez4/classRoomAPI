@@ -2,13 +2,18 @@ package com.example.classRoomAPI.modelos;
 
 import com.example.classRoomAPI.ayudas.TipoUsuario;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
 @Entity
+
 public class Estudiante {
+
+    @Column(name="id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private Integer  grado;
     private LocalDate fechaNacimiento;

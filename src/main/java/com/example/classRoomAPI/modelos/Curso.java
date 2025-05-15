@@ -12,7 +12,7 @@ import java.util.List;
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id_curso")
+    @Column(name = "id")
     private Integer id;
 
     @Column(name ="nombre",length = 100, unique = false, nullable = false)
@@ -27,7 +27,7 @@ public class Curso {
     //Creando relacion Asistencia(1 a *)
     @OneToMany(mappedBy = "curso")
     @JsonManagedReference
-    private List<Curso> cursos;
+    private List<Asistencia> asistencias;
 
     public Curso() {
     }

@@ -1,9 +1,7 @@
 package com.example.classRoomAPI.modelos;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,21 +9,23 @@ import java.util.List;
 @Entity
 
 public class Docente {
-
+    @Column(name="id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String especilidad;
+    private String especialidad;
 
    //Creando relacion (1 a *)
    @OneToMany(mappedBy = "docente")
    @JsonManagedReference
-    private List<Curso> cursos;
+    private List<Curso> curso;
 
     public Docente() {
     }
 
-    public Docente(Integer id, String especilidad) {
+    public Docente(Integer id, String especialidad) {
         this.id = id;
-        this.especilidad = especilidad;
+        this.especialidad = especialidad;
     }
 
     public Integer getId() {
@@ -36,11 +36,11 @@ public class Docente {
         this.id = id;
     }
 
-    public String getEspecilidad() {
-        return especilidad;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setEspecilidad(String especilidad) {
-        this.especilidad = especilidad;
+    public void setEspecilidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 }

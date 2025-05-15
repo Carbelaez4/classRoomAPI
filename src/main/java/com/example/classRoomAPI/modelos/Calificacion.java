@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class Calificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id_calificacion")
+    @Column(name = "id")
     private Integer id;
 
     @Column(name ="nota", unique = false, nullable = false)

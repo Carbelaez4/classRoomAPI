@@ -57,7 +57,7 @@ public class DocenteServicio {
         Optional<Docente>docenteQueEstoyBUscandoParaEditar=this.repositorio.findById(id);
         if(docenteQueEstoyBUscandoParaEditar.isPresent()){
           //Modificar ese docente
-          docenteQueEstoyBUscandoParaEditar.get().setEspecilidad(datosNuevosDocente.getEspecilidad());
+          docenteQueEstoyBUscandoParaEditar.get().setEspecilidad(datosNuevosDocente.getEspecialidad());
           //Guardo las modificaciones en la BD
            return this.repositorio.save(docenteQueEstoyBUscandoParaEditar.get());
         }else{

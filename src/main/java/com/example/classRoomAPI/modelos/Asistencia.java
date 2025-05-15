@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Asistencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "Id_asistencia")
+    @Column(name= "id")
     private Integer id;
 
     @Column(name="fecha",unique = false, nullable = false)
